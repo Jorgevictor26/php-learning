@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>
+        <?php
+        echo "Hello, World!! \u{1F30D}"; 
+        ?>
+    </h1>
 </body>
 </html>
