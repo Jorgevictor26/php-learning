@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Result</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-        <h1>Resultado</h1>
+        <h1>Result</h1>
     </header>
     <main>
-            <?php 
+        <?php
 
-$name = $_GET["name"];
-$surname =$_GET["surname"];
+        $name = $_GET["name"];
+        $surname = $_GET["surname"];
 
-echo"<p>Seja Bem-Vindo <strong> $name $surname </strong> </p>";
-?>
+        echo "<p>Seja Bem-Vindo <strong> $name $surname </strong> </p>";
+        ?>
     </main>
 </body>
+
 </html>
