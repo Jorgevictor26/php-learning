@@ -11,7 +11,6 @@
 <body>
     <main>
         <?php
-
         $min = $_GET["min"] ?? 0;
         $max = $_GET["max"] ?? 0;
         $number = $_GET["number"] ?? 0;

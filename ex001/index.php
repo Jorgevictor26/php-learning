@@ -9,6 +9,8 @@
     <h1>My server info</h1>
     <?php 
     phpinfo();
+    echo "<pre>" .  var_dump($_SERVER) . "</pre>";
+   
     ?>
 </body>
 </html>
