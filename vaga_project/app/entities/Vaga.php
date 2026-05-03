@@ -1,6 +1,9 @@
-<?php 
+<?php
 
 namespace App\entities;
+
+use \App\Db\Database;
+use \PDO;
 
 class Vaga
 {
@@ -21,9 +24,18 @@ class Vaga
     public function cadastrar()
     {
         $this->data = date('Y-m-d H:i:s');
+        $obDatabase = new Database('vagas');
+        $this->id = $obDatabase->insert([
+            'titulo' => $this->titulo,
+            'descricao' => $this->descricao,
+            'activo' => $this->ativo,
+            'data' => $this->data
+        ]);
+        return true;
+    }
 
-        
+    public static function getVagas($where = null, $order = null, $limit = null)
+    {
+        return (new Database('vagas'))->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 }
-
-?>
