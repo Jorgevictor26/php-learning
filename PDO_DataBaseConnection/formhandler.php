@@ -14,10 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $query = "INSERT INTO tb_autor(biografia, autor) VALUES(:biografia, :autor);";
 
-        $stmt = $pdo->prepare($query);
-        $stmt->bindParam(":biografia", $bio);
-        $stmt->bindParam(":autor", $autor);
-        $stmt->execute();
+        if ($pdo !== null) {
+            $stmt = $pdo->prepare($query);
+            $stmt->bindParam(":biografia", $bio);
+            $stmt->bindParam(":autor", $autor);
+            $stmt->execute();
+        }
+
 
         $pdo = null;
         $stmt = null;
